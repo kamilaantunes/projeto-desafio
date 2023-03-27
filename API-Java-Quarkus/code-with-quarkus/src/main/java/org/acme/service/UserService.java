@@ -20,12 +20,12 @@ public class UserService {
         User user = new User();
 
         user.setNome(dto.getNome());
-        user.setLastNome(dto.getLastNome());
         user.setIdade(dto.getIdade());
+        user.setEmail(dto.getEmail());
         user.setCidade(dto.getCidade());
         user.setEstado(dto.getEstado());
         user.setEscolaridade(dto.getEscolaridade());
-        user.setIdade(dto.getIdade());
+        user.setObservacao(dto.getObservacao());
 
         user.persist();
 
@@ -46,12 +46,12 @@ public class UserService {
         user = userOp.get();
 
         user.setNome(dto.getNome());
-        user.setLastNome(dto.getLastNome());
         user.setIdade(dto.getIdade());
+        user.setEmail(dto.getEmail());
         user.setCidade(dto.getCidade());
         user.setEstado(dto.getEstado());
         user.setEscolaridade(dto.getEscolaridade());
-        user.setIdade(dto.getIdade());
+        user.setObservacao(dto.getObservacao());
 
         user.persist();
     }

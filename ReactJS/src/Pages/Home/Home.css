@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    margin-top: -2vh;
+    margin-right: 5vh;
+}
+
+form{
+    margin-top: 10vh;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    align-items: center;
+}
+
+.form-container {
+    padding: 30px;
+    background-color: #f2f2f2;
+    margin-left: -1rem;
+    margin-top: -1.7rem;
+    height: 100vh;  
+    position: static;
+}
+  
+  .image-container {
+    text-align: center;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
