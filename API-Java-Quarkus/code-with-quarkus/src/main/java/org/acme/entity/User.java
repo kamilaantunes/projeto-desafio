@@ -9,12 +9,12 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Table(name = "users")
 public class User extends PanacheEntity{
     private String nome;
-    private String lastNome;
     private Integer idade;
+    private String email;
     private String cidade;
     private String estado;
     private String escolaridade;
-    private String telefone;
+    private String observacao;
 
     public Long getId(){
         return id;
@@ -32,12 +32,12 @@ public class User extends PanacheEntity{
         this.nome = nome;
     }
 
-    public String getLastNome(){
-        return lastNome;
+    public String getEmail(){
+        return email;
     }
 
-    public void setLastNome(String lastNome){
-        this.lastNome = lastNome;
+    public void setEmail(String email){
+        this.email = email;
     }
 
     public Integer getIdade(){
@@ -72,11 +72,11 @@ public class User extends PanacheEntity{
         this.escolaridade = escolaridade;
     }
 
-    public String getTelefone(){
-        return telefone;
+    public String getObservacao(){
+        return observacao;
     }
 
-    public void setTelefone(String telefone){
-        this.telefone = telefone;
+    public void setObservacao(String observacao){
+        this.observacao = observacao;
     }
 }

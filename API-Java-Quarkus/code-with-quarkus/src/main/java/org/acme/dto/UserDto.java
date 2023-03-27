@@ -4,12 +4,12 @@ package org.acme.dto;
 
 public class UserDto {
     private String nome;
-    private String lastNome;
     private Integer idade;
+    private String email;
     private String cidade;
     private String estado;
     private String escolaridade;
-    private String telefone;
+    private String observacao;
 
     public String getNome(){
         return nome;
@@ -19,12 +19,12 @@ public class UserDto {
         this.nome = nome;
     }
 
-    public String getLastNome(){
-        return lastNome;
+    public String getEmail(){
+        return email;
     }
 
-    public void setLastNome(String lastNome){
-        this.lastNome = lastNome;
+    public void setEmail(String email){
+        this.email = email;
     }
 
     public Integer getIdade(){
@@ -59,11 +59,11 @@ public class UserDto {
         this.escolaridade = escolaridade;
     }
 
-    public String getTelefone(){
-        return telefone;
+    public String getObservacao(){
+        return observacao;
     }
 
-    public void setTelefone(String telefone){
-        this.telefone = telefone;
+    public void setObservacao(String observacao){
+        this.observacao = observacao;
     }
 }
