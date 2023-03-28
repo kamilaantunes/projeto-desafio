@@ -16,13 +16,13 @@ Este projeto está estruturado em três principais pastas, sendo: <br />
 #
     API Java Quarkus
 
-        Comando para inicializar API Java com Quarkus: 
+        • Comando para inicializar API Java com Quarkus: 
             mvn quarkus:dev
 
-        Importante:
+        * Importante:
             • Ter instalado o Java e Maven;
             • Para compilar o comando, deve estar dentro da pasta do quarkus;
-            • Abertura na porta 8080.
+            • Abertura na porta 8080 (importante garantir a execução nessa porta para que não seja necessário alteração de rotas no código).
 
 #
     React JS
@@ -43,3 +43,11 @@ Este projeto está estruturado em três principais pastas, sendo: <br />
 
 #
     ReactNative
+    
+        • O projeto desenvolvido em react native, também consiste em um CRUD que realizará requisições para a API desenvolvida anteriormente em Java. Este, por sua vez, tem objetivo de execução os aplicativos em dispositivos móveis. Recomenda-se a utilização do aplicativo expo para poder visualizar a interface, com a pasta aberta digite o comando:
+          expo start | Comando irá gerar um QR Code, basta ler com o auxílio de uma camêra do celular e irá redirecionar para o aplicativo do expo e abertura da aplicação.
+        • A aplicação pode ser encontrada no arquivo **app.js**, com as principais funcionalidade: cadastrar usuário, leitura dos dados, atualizar e deletar usuários.
+        
+#
+
+> Kamila Antunes | kamilaantunes1@gmail.com | https://www.linkedin.com/in/kamila-antunes/
