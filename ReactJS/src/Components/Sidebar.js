@@ -4,8 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import './Sidebar.css';
-import Logo from '../Img/Logo.png';
-import Logo_pqn from '../Img/Logo-pqn.png';
+import logo from '../logo.svg';
 
 function Sidebar({children}){
     const[isOpen ,setIsOpen] = useState(true);
@@ -20,20 +19,20 @@ function Sidebar({children}){
             path: "/lista",
             name: "Lista",
             icon: <i  className="bi-database"/>,
-        },{
+        }/*,{
             path: "/update",
             name: "Update",
             icon: <i class="bi bi-brush" />
-        },
+        },*/
     ]
     return (
         <div className="container-fluid">
             <div className="row">
                 <div className="sidebar col-auto min-vh-100 bg-dark" style={{width: isOpen ? "200px" : "80px"}}>
                     <div className="top_section">
-                        <h1 className="logo" style={{display: isOpen ? "block" : "none"}}> Logo </h1>
+                        <h1 className="logo" style={{display: isOpen ? "block" : "none"}}> <img src={logo} style={{width: '5rem'}}/> </h1>
                         
-                        <div className="bars" style={{marginLeft: isOpen ? "50px" : "0px"}}>
+                        <div className="bars" style={{marginLeft: isOpen ? "40px" : "0px"}}>
                             <i class="bi bi-list-nested" onClick={toggle} /> 
                         </div>
                     </div>

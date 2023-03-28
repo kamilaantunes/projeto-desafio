@@ -1,32 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate, NavLink } from 'react-router-dom';
 
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
 function Update(){
-  const {id} = useParams();
+  const {id} = useParams();   // Definindo id para atualização do usuário
 
-  const [nome, setNome] = useState();
-  const [email, setEmail] = useState();
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
   const [idade, setIdade] = useState('');
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
   const [escolaridade, setEscolaridade] = useState('');
   const [observacao, setObservacao] = useState('');
 
+    // Requisição ao BD para retornar atuais informações cadastradas
   useEffect(() => {
     async function fetchUser(){
       const response = await fetch(`http://localhost:8080/users/${id}`);
       const userData = await response.json();
 
-      setNome(userData.nome);
-      setIdade(userData.idade);
-      setEmail(userData.email);
-      setCidade(userData.cidade);
-      setEstado(userData.estado);
-      setEscolaridade(userData.escolaridade);
-      setObservacao(userData.observacao);
+      if (response.ok && typeof userData === 'object'){
+        setNome(userData.nome);
+        setIdade(userData.idade);
+        setEmail(userData.email);
+        setCidade(userData.cidade);
+        setEstado(userData.estado);
+        setEscolaridade(userData.escolaridade);
+        setObservacao(userData.observacao);
+      } else {
+        alert("Erro ao buscar usuário! Favor, tente novamente!");
+      }
     }
     fetchUser();
   }, [id]);
@@ -39,7 +44,7 @@ function Update(){
     estado,
     escolaridade,
     observacao
-  };;
+  };
 
   async function handleSubmit(event){
     event.preventDefault();
@@ -53,9 +58,10 @@ function Update(){
     });
 
     if (response.ok){
-      alert("Usuário atualizado com sucesso!")
+      alert("Usuário atualizado com sucesso!");
+      return <NavLink to='/lista' />
     } else {
-      alert("Erro ao atualizar usuário! Favor, tente novamente.")
+      alert("Erro ao atualizar usuário! Favor, tente novamente.");
     }
   }
 
