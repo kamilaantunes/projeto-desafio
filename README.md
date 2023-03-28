@@ -1,3 +1,5 @@
+      • O projeto consiste em desenvolver um CRUD (create, read, update e delete) de um cadastro de pessoas. Para isso, foi-se necessário o desenvolvimento de uma API (application programming interface) utilizando Java com o framework quarkus. As interfaces foram criadas nas tecnologias: React.js e React Native.
+
 #
 Este projeto está estruturado em três principais pastas, sendo: <br />
 >
