@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
-import { NavLink } from "react-router-dom";
 
 import './Home.css';
 

@@ -28,14 +28,11 @@ main{
     padding:20px 15px;
 }
 
-.logo{
-    font-size: 25px;
-}
-
 .bars{
     display: flex;
     font-size: 25px;
-    margin-left: 50px;
+    margin-left: 40px;
+    cursor: pointer;
 }
 
 .link{

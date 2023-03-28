@@ -13,6 +13,7 @@ function Lista(){
       setDados(data);
     }
 
+      // Definindo fetchData como global, assim posso acessá-la em outra function
     useEffect(() => {
       fetchData();
     }, []);
@@ -21,6 +22,13 @@ function Lista(){
       // Delete usuário por id
     async function handleDelete(id){
       const confirmed = window.confirm("Tem certeza que deseja excluir o usuário selecionado?");
+      
+      if (!confirmed){
+        alert("Exclusão cancelada!");
+
+        return;
+      }
+
       const response = await fetch(`http://localhost:8080/users/${id}`, {
         method: "DELETE"
       });
@@ -28,8 +36,6 @@ function Lista(){
       if (response.ok){
         fetchData();    // Se a exclusão for bem sucedida, atualiza a lista de dados.
         alert("Item excluído com sucesso!");
-      } else {
-        alert("Cancelada a exclusão!")
       }
     }
 
@@ -60,7 +66,7 @@ function Lista(){
                   <td> {item.observacao} </td>
                   <td className="text-center">
                     <NavLink to={`/update/${item.id}`}> <i className="bi bi-brush" /> </NavLink>
-                    <NavLink to='#' onClick={() => handleDelete(item.id)}> <i className="bi bi-trash" /> </NavLink>
+                    <NavLink to='#' onClick={() => handleDelete(item.id)} style={{background: 'none', color: '#FF0000'}}> <i className="bi bi-trash" /> </NavLink>
                   </td>
                 </tr>
               ))}

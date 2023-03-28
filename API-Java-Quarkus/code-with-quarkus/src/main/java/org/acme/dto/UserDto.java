@@ -1,6 +1,7 @@
 package org.acme.dto;
 
-    // Data transferer object
+    // Data Transfer Object
+        // Transporte de dados entre componentes do sistema
 
 public class UserDto {
     private String nome;
