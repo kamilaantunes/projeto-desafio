@@ -1,22 +1,22 @@
 #
 Este projeto está estruturado em três principais pastas, sendo: <br />
-    • API-Java-Quarkus: pasta onde poderá ser acessada a API desenvolvida utilizada neste projeto. Essa, possui três principais pastas para caso haja necessidade de realizar atualização na API sendo elas: <br />
-        • Controller <br />
-        • DTO - data transfer object <br />
-        • Entity <br />
-        • Service<br />
+    > **API-Java-Quarkus**: pasta onde poderá ser acessada a API desenvolvida utilizada neste projeto. Essa, possui três principais pastas para caso haja necessidade de realizar atualização na API sendo elas: <br />
+        * Controller <br />
+        * DTO - data transfer object <br />
+        * Entity <br />
+        * Service<br />
             Podem ser acessadas em: API-Java-Quarkus > code-with-quarkus > main > java > org > acme
-        • O template do projeto foi instalado e configurado através do site oficial da Quarkus (https://code.quarkus.io/), utilizando as configurações: <br />
+        * O template do projeto foi instalado e configurado através do site oficial da Quarkus (https://code.quarkus.io/), utilizando as configurações: <br />
             Web: RESTEasy Reactive Jackson <br />
             Data: Hibernate ORM with Panache e JDBC Driver - H2 <br />
-    • ReactJs: pasta que estás armazenando o desenvolvimento web do projeto. Iniciado através do comando "npx create-react-app", utilizando as principais tecnologias: bootstrap, react-router, react-form, comunicação com a API desenvolvida, nodeJS e JavaScript.
-    • ReactNative:
+    > **ReactJs**: pasta que estás armazenando o desenvolvimento web do projeto. Iniciado através do comando "npx create-react-app", utilizando as principais tecnologias: bootstrap, react-router, react-form, comunicação com a API desenvolvida, nodeJS e JavaScript.
+    > **ReactNative**:
 
 #
-    API Java Quarkus
+    *API Java Quarkus*
 
         Comando para inicializar API Java com Quarkus: 
-            mvn quarkus:dev
+            ``` mvn quarkus:dev ```
 
         Importante:
             • Ter instalado o Java e Maven;
@@ -29,7 +29,7 @@ Este projeto está estruturado em três principais pastas, sendo: <br />
     React JS
 
         • Aplicação irá realizar o CRUD - create, read, update, delete - na API. Comando para startar o projeto:
-            npm start || yarn start
+            ``` npm start || yarn start ```
         • Ao acessar a aplicação, será visualizada a página inicial, nomeada como home onde será possível verificar:
             • Sidebar: com as principais rotas da aplicação: home e listagem dos usuários;
             • Formulário para cadastrar usuários, com os campos: Nome, idade, e-mail, cidade, estado, escolaridade e observação. Ao preencher e salvar o formulários, os dados serão enviados para a API;
