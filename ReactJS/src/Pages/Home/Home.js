@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import {useForm} from 'react-hook-form';
 
-import Col from 'react-bootstrap/Col';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+import { NavLink } from "react-router-dom";
 
 import './Home.css';
 
 function Home(){
-    const {register, setValue} = useForm();
-
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [idade, setIdade] = useState('');
@@ -45,17 +41,28 @@ function Home(){
         } else {
             alert('Ocorreu um erro ao realizar o cadastro! ')
         }
-  }
+    }
+
+    // function clearForm() {
+    //     setFormData({
+    //         nome: "",
+    //         idade: "",
+    //         email: "",
+    //         cidade: "",
+    //         estado: "",
+    //         escolaridade: "",
+    //         observacao: "",
+    //     });
+    // }
 
     return (
-        <>
-            <div className="container">
+        <div className="container">
             <div className="image">
                 <div className="form-container">
                     <form>
                         <div className="row g-2">
                             <div className="col-md">
-                                <FloatingLabel value={nome} onChange={(event) => setNome(event.target.value)} controlId="floatInputGrid" label="Nome" style={{width: '12rem'}}>
+                                <FloatingLabel value={nome} onChange={(event) => setNome(event.target.value)} controlId="floatInputGrid" label="Nome" style={{width: '18rem'}}>
                                     <Form.Control type="string" />
                                 </FloatingLabel>
                             </div>
@@ -65,9 +72,13 @@ function Home(){
                                     <Form.Control type="number" />
                                 </FloatingLabel>
                             </div>
+                        </div>
 
+                        <br />
+
+                        <div className="row g-2">
                             <div className="col-md">
-                                <FloatingLabel value={email} onChange={(event) => setEmail(event.target.value)} controlId="floatInputGrid" label="E-mail" style={{width: '12rem'}}>
+                                <FloatingLabel value={email} onChange={(event) => setEmail(event.target.value)} controlId="floatInputGrid" label="E-mail">
                                     <Form.Control type="string" />
                                 </FloatingLabel>
                             </div>
@@ -97,7 +108,6 @@ function Home(){
                                     <Form.Control type="string" />
                                 </FloatingLabel>
                             </div>
-
                         </div>
 
                         <br />
@@ -112,7 +122,13 @@ function Home(){
 
                         <br />
 
-                        <button onClick={handleSubmit} type='button' className="btn btn-success btn-acao"> Salvar </button>
+                        <div className='text-center'>
+                            <button onClick={handleSubmit} type='button' className="btn btn-success btn-acao"> Salvar </button>
+                            
+                            {/* <NavLink onClick={clearForm} type='button' className='btn btn-outline-danger btn-acao' style={{marginLeft: '2rem'}}>
+                                Cancelar
+                            </NavLink>   */}
+                        </div> 
                     </form>
                 </div>
 
@@ -121,8 +137,7 @@ function Home(){
                 </div>
             </div>
 
-            </div>
-        </>
+         </div>
     )
 }
 

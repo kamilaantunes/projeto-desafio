@@ -47,7 +47,7 @@ main{
 }
 
 .link:hover{
-    background: #e0daf7;
+    background: #F2F2F2;
     border-radius: 4%;
     color: #000;
     transition: all 0.5s ease-in-out;

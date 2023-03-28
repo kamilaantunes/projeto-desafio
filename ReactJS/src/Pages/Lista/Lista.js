@@ -3,22 +3,34 @@ import {NavLink} from 'react-router-dom';
 
 function Lista(){
     const [dados, setDados] = useState([]);
+    const [selectedItem, setSelectedItem] = useState(null);
+
+      // Busca dados da api
+    async function fetchData() {
+      const response = await fetch('http://localhost:8080/users');
+      const data = await response.json();
+    
+      setDados(data);
+    }
 
     useEffect(() => {
-        async function fetchData() {
-            const response = await fetch('http://localhost:8080/users');
-            const data = await response.json();
-          
-            setDados(data);
-          }
-          
-        fetchData();
-    }, [])
+      fetchData();
+    }, []);
+  
 
-    // console.log(dados);
+      // Delete usuário por id
+    async function handleDelete(id){
+      const confirmed = window.confirm("Tem certeza que deseja excluir o usuário selecionado?");
+      const response = await fetch(`http://localhost:8080/users/${id}`, {
+        method: "DELETE"
+      });
 
-    function handleEditar(id){
-        window.location.href = `/update/${id}`
+      if (response.ok){
+        fetchData();    // Se a exclusão for bem sucedida, atualiza a lista de dados.
+        alert("Item excluído com sucesso!");
+      } else {
+        alert("Cancelada a exclusão!")
+      }
     }
 
     return <div className='table table responsive'>
@@ -32,7 +44,7 @@ function Lista(){
                     <th scope="col"> Cidade </th>
                     <th scope="col"> Estado </th>
                     <th scope="col"> Observação </th>
-                    <th scope="col"> Ações </th>
+                    <th scope="col" style={{width: '2rem'}}> Ações </th>
                 </tr>
             </thead>
 
@@ -46,9 +58,9 @@ function Lista(){
                   <td> {item.cidade} </td>
                   <td> {item.estado} </td>
                   <td> {item.observacao} </td>
-                  <td>
-                    <NavLink onClick={() => handleEditar(item.id)} > <i class="bi bi-brush" /> </NavLink>
-                    <NavLink to='#' /*onClick={() => props.clickDelete(epi.id)}*/> <i class="bi bi-trash" /> </NavLink>
+                  <td className="text-center">
+                    <NavLink to={`/update/${item.id}`}> <i className="bi bi-brush" /> </NavLink>
+                    <NavLink to='#' onClick={() => handleDelete(item.id)}> <i className="bi bi-trash" /> </NavLink>
                   </td>
                 </tr>
               ))}
