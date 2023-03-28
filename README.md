@@ -29,8 +29,11 @@ Este projeto está estruturado em três principais pastas, sendo: <br />
 #
     React JS
 
-        • Aplicação irá realizar o CRUD - create, read, update, delete - na API. Comando para startar o projeto:
-            npm start || yarn start
+        • Aplicação irá realizar o CRUD - create, read, update, delete - na API. 
+            • Instalar as depedências:
+               npm install
+            • Comando para startar o projeto:
+               npm start || yarn start
         • Ao acessar a aplicação, será visualizada a página inicial, nomeada como home onde será possível verificar:
             • Sidebar: com as principais rotas da aplicação: home e listagem dos usuários;
             • Formulário para cadastrar usuários, com os campos: Nome, idade, e-mail, cidade, estado, escolaridade e observação. Ao preencher e salvar o formulários, os dados serão enviados para a API;
