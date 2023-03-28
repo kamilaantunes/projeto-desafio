@@ -1,4 +1,4 @@
-package org.acme.controlle;
+package org.acme.controller;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ import org.acme.service.UserService;
 @Path("users")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class UserControlle {
+public class UserController {
     @Inject
     UserService service;
 

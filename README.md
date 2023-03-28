@@ -23,8 +23,6 @@ Este projeto está estruturado em três principais pastas, sendo: <br />
             • Ter instalado o Java e Maven;
             • Para compilar o comando, deve estar dentro da pasta do quarkus;
             • Abertura na porta 8080.
-            • Atualmente, apenas a porta 3000 está habilitada para acessar a API na porta 8080, conforme a política do CORS. Logo, é importante que a aplicação em reactJS esteja sendo executada na porta 3000, caso contrário, será necessário autorizar a porta no seguinte arquivo:
-                API-Java-Quarkus > code-with-quarkus > target > classes application.properties
 
 #
     React JS
