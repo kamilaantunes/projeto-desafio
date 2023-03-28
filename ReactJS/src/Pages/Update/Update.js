@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Navigate, NavLink } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
 function Update(){
+  const navigate = useNavigate();
+
   const {id} = useParams();   // Definindo id para atualização do usuário
 
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
-  const [idade, setIdade] = useState('');
+  const [idade, setIdade] = useState(null);
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
   const [escolaridade, setEscolaridade] = useState('');
@@ -19,16 +21,16 @@ function Update(){
   useEffect(() => {
     async function fetchUser(){
       const response = await fetch(`http://localhost:8080/users/${id}`);
-      const userData = await response.json();
+      const user = await response.json();
 
-      if (response.ok && typeof userData === 'object'){
-        setNome(userData.nome);
-        setIdade(userData.idade);
-        setEmail(userData.email);
-        setCidade(userData.cidade);
-        setEstado(userData.estado);
-        setEscolaridade(userData.escolaridade);
-        setObservacao(userData.observacao);
+      if (response.ok && typeof user === 'object'){
+        setNome(user.nome);
+        setIdade(user.idade);
+        setEmail(user.email);
+        setCidade(user.cidade);
+        setEstado(user.estado);
+        setEscolaridade(user.escolaridade);
+        setObservacao(user.observacao);
       } else {
         alert("Erro ao buscar usuário! Favor, tente novamente!");
       }
@@ -46,7 +48,8 @@ function Update(){
     observacao
   };
 
-  async function handleSubmit(event){
+
+  async function handleUpdate(event){
     event.preventDefault();
 
     const response = await fetch(`http://localhost:8080/users/${id}`, {
@@ -59,7 +62,7 @@ function Update(){
 
     if (response.ok){
       alert("Usuário atualizado com sucesso!");
-      return <NavLink to='/lista' />
+      navigate('/lista');
     } else {
       alert("Erro ao atualizar usuário! Favor, tente novamente.");
     }
@@ -83,16 +86,16 @@ function Update(){
                   <Form.Control type="number" />
               </FloatingLabel>
             </div>
-          </div>
-          <br />
+          </div> <br />
+          
           <div className="row g-2">
             <div className="col-md">
               <FloatingLabel value={email} onChange={(event) => setEmail(event.target.value)} controlId="floatInputGrid" label="E-mail">
                 <Form.Control type="string" />
               </FloatingLabel>
             </div>
-          </div>
-          <br />
+          </div> <br />
+          
           <div className="row g-2">
             <div className="col-md">
               <FloatingLabel value={cidade} onChange={(event) => setCidade(event.target.value)} controlId="floatInputGrid" label="Cidade">
@@ -105,26 +108,26 @@ function Update(){
                 <Form.Control type="string" />
               </FloatingLabel>
             </div>
-          </div>
-          <br />
+          </div> <br />
+          
           <div className="row g-2">
             <div className="col-md">
               <FloatingLabel value={escolaridade} onChange={(event) => setEscolaridade(event.target.value)} controlId="floatInputGrid" label="Escolaridade">
                 <Form.Control type="string" />
               </FloatingLabel>
             </div>
-          </div>
-          <br />
+          </div> <br />
+          
           <div className="row g-2">
             <div className="col-md">
               <FloatingLabel value={observacao} onChange={(event) => setObservacao(event.target.value)} controlId="floatInputGrid" label="Observação">
                 <Form.Control type="string" />
               </FloatingLabel>
             </div>
-          </div>
-          <br />
+          </div> <br />
+          
           <div className='text-center'>
-            <button onClick={handleSubmit} type='button' className="btn btn-success btn-acao"> Salvar </button>
+            <button onClick={handleUpdate} type='button' className="btn btn-success btn-acao"> Salvar </button>
           </div> 
         </form>
       </div>
