@@ -13,7 +13,7 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/update:{id}' element={<Update />} />
+        <Route path='/update/:id' element={<Update />} />
         <Route path='/lista' element={<Lista />} />
       </Routes>
     </BrowserRouter>
