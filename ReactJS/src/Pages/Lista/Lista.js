@@ -3,7 +3,6 @@ import {NavLink} from 'react-router-dom';
 
 function Lista(){
     const [dados, setDados] = useState([]);
-    const [selectedItem, setSelectedItem] = useState(null);
 
       // Busca dados da api
     async function fetchData() {
@@ -25,7 +24,6 @@ function Lista(){
       
       if (!confirmed){
         alert("Exclusão cancelada!");
-
         return;
       }
 
@@ -39,40 +37,40 @@ function Lista(){
       }
     }
 
-    return <div className='table table responsive'>
-        <table className='table table-bordered table-hover' style={{width: '71rem',marginLeft: '32vh'}}>
-            <thead>
-                <tr className="text-center">
-                    <th scope="col" style={{width: '2rem'}}> # </th>
-                    <th scope="col"> Nome </th>
-                    <th scope="col"style={{width: '2rem'}}> Idade </th>
-                    <th scope="col"> E-mail </th>
-                    <th scope="col"> Cidade </th>
-                    <th scope="col"> Estado </th>
-                    <th scope="col"> Observação </th>
-                    <th scope="col" style={{width: '2rem'}}> Ações </th>
-                </tr>
-            </thead>
+  return <div className='table table responsive'>
+    <table className='table table-bordered table-hover' style={{width: '71rem',marginLeft: '32vh'}}>
+      <thead>
+        <tr className="text-center">
+          <th scope="col" style={{width: '2rem'}}> # </th>
+          <th scope="col"> Nome </th>
+          <th scope="col"style={{width: '2rem'}}> Idade </th>
+          <th scope="col"> E-mail </th>
+          <th scope="col"> Cidade </th>
+          <th scope="col"> Estado </th>
+          <th scope="col"> Observação </th>
+          <th scope="col" style={{width: '2rem'}}> Ações </th>
+        </tr>
+      </thead>
 
-            <tbody>
-              {dados.map((item) => (
-                <tr key={item.id}>
-                  <td> {item.id} </td>
-                  <td> {item.nome} </td>
-                  <td> {item.idade} </td>
-                  <td> {item.email} </td>
-                  <td> {item.cidade} </td>
-                  <td> {item.estado} </td>
-                  <td> {item.observacao} </td>
-                  <td className="text-center">
-                    <NavLink to={`/update/${item.id}`}> <i className="bi bi-brush" /> </NavLink>
-                    <NavLink to='#' onClick={() => handleDelete(item.id)} style={{background: 'none', color: '#FF0000'}}> <i className="bi bi-trash" /> </NavLink>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-        </table>
-    </div>
+      <tbody>
+        {dados.map((user) => (
+          <tr key={user.id}>
+            <td> {user.id} </td>
+            <td> {user.nome} </td>
+            <td> {user.idade} </td>
+            <td> {user.email} </td>
+            <td> {user.cidade} </td>
+            <td> {user.estado} </td>
+            <td> {user.observacao} </td>
+            <td className="text-center">
+              <NavLink to={`/update/${user.id}`}> <i className="bi bi-brush" /> </NavLink>
+              <NavLink to='#' onClick={() => handleDelete(user.id)} style={{background: 'none', color: '#FF0000'}}> <i className="bi bi-trash" /> </NavLink>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 }
 
 export default Lista;
