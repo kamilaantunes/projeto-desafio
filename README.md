@@ -1,17 +1,17 @@
 • O projeto consiste em desenvolver um CRUD (create, read, update e delete) de um cadastro de pessoas. Para isso, foi-se necessário o desenvolvimento de uma API (application programming interface) utilizando Java com o framework quarkus. As interfaces foram criadas nas tecnologias: React.js e React Native.
 
 #
-Este projeto está estruturado em três principais pastas, sendo: <br />
+Este projeto está estruturado em três principais pastas, sendo:
 >
-     • **API-Java-Quarkus**: pasta onde poderá ser acessada a API desenvolvida utilizada neste projeto. Essa, possui três principais pastas para caso haja necessidade de realizar atualização na API sendo elas: <br />
-          * Controller <br />
-          * DTO - data transfer object <br />
-          * Entity <br />
-          * Service<br />
+     • **API-Java-Quarkus**: pasta onde poderá ser acessada a API desenvolvida utilizada neste projeto. Essa, possui três principais pastas para caso haja necessidade de realizar atualização na API sendo elas:
+          * Controller
+          * DTO - data transfer object
+          * Entity
+          * Service
                  - As pastas podem ser acessadas em: **API-Java-Quarkus > code-with-quarkus > main > java > org > acme**
-          * O template do projeto foi instalado e configurado através do site oficial da Quarkus (https://code.quarkus.io/), utilizando as configurações: <br />
-               - Web: RESTEasy Reactive Jackson <br />
-               - Data: Hibernate ORM with Panache e JDBC Driver - H2 <br />
+          * O template do projeto foi instalado e configurado através do site oficial da Quarkus (https://code.quarkus.io/), utilizando as configurações:
+               - Web: RESTEasy Reactive Jackson
+               - Data: Hibernate ORM with Panache e JDBC Driver - H2
      • **ReactJs**: pasta que estás armazenando o desenvolvimento web do projeto. Iniciado através do comando "npx create-react-app", utilizando as principais tecnologias: bootstrap, react-router, react-form, comunicação com a API desenvolvida, nodeJS e JavaScript.
      • **ReactNative**:
 
